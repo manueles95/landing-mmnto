@@ -143,7 +143,7 @@
 })(jQuery);
 
     var typed = new Typed('.auto_type', {
-        strings: ["Brand", "Bussines", "Restaurant"],
+        strings: ["Brand", "Bussines", "Identity", "Social Media"],
         typeSpeed: 190,
         loop: true,
         backSpeed: 50,
