@@ -3,7 +3,8 @@
 
     $(window).on('load', function(){
         // Prealoder
-        $("#preloader").delay(1400).fadeOut("slow");
+        $("#preloader").delay(3000).fadeOut("slow");
+    
     });
 
     $(document).ready(function () {
@@ -36,7 +37,6 @@
         // animation for Back to top button
         $('.back-to-top').on('click', function (event) {
             event.preventDefault();
-
             $('html, body').animate({
                 scrollTop: 0,
             }, 1500);
