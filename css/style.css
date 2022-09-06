@@ -28,7 +28,7 @@
 	font-display: swap;
 }
 
-/* @font-face {
+ @font-face {
 	font-family: 'Gotham';
 	src: url('../webfonts/Gotham-Bold.eot');
 	src: url('../webfonts/Gotham-Bold.eot?#iefix') format('embedded-opentype'),
@@ -52,7 +52,7 @@
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
-} */
+} 
 
 
 /*====================== Basic css ========================*/
@@ -729,15 +729,15 @@ footer li{
 }
 
 .logos_area .box.a{
-	background: #FFF1E8;
+	background: #FFFFFF;
 }
 
 .logos_area .box.b {
-	background: #6500F4;
+	background: #ffcd05;
 }
 
 .logos_area .box.c {
-	background: #FEC800;
+	background: #5d52a3;
 }
 
 .logos_area .btn{
