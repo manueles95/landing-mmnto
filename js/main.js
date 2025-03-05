@@ -3,7 +3,7 @@
 
     $(window).on('load', function(){
         // Prealoder
-        $("#preloader").delay(3000).fadeOut("slow");
+        $("#preloader").delay(2000).fadeOut("slow");
     
     });
 
@@ -45,7 +45,7 @@
 
         // services carousel Initialize
         $('.service_carousel').owlCarousel({
-            loop: true,
+            loop: false,
             margin: 30,
             autoplay: false,
             smartSpeed: 750,
@@ -72,8 +72,8 @@
 
         // reviews carousel Initialize
         $('.reviews_carousel').owlCarousel({
-            loop: false,
-            autoplay: false,
+            loop: true,
+            autoplay: true,
             smartSpeed: 750,
             nav: true,
             dots: false,
@@ -143,7 +143,7 @@
 })(jQuery);
 
     var typed = new Typed('.auto_type', {
-        strings: ["Brand", "Bussines", "Identity", "Social Media"],
+        strings: ["Boda", "Graduación", "Cumpleaños", "Inaguración"],
         typeSpeed: 190,
         loop: true,
         backSpeed: 50,
