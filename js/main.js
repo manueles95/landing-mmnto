@@ -45,9 +45,9 @@
 
         // services carousel Initialize
         $('.service_carousel').owlCarousel({
-            loop: false,
+            loop: true,
             margin: 30,
-            autoplay: false,
+            autoplay: true,
             smartSpeed: 750,
             nav: true,
             dots: false,
