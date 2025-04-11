@@ -45,9 +45,9 @@
 
         // services carousel Initialize
         $('.service_carousel').owlCarousel({
-            loop: true,
+            loop: false,
             margin: 30,
-            autoplay: true,
+            autoplay: false,
             smartSpeed: 750,
             nav: true,
             dots: false,
@@ -74,7 +74,7 @@
         $('.reviews_carousel').owlCarousel({
             loop: true,
             autoplay: true,
-            smartSpeed: 750,
+            smartSpeed: 1000,
             nav: true,
             dots: false,
             navText: ["<img src='img/left-arrow.svg'>", "<img src='img/right-arrow.svg'>"],
