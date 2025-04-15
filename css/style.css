@@ -966,32 +966,3 @@ form .btn:hover{
     position: relative;
     z-index: 1;
 }
-
-.price_slider_area {
-	padding: 60px 0;
-	background-color: #181820;
-	color: white;
-  }
-  
-  #guestsRange {
-	width: 80%;
-	max-width: 500px;
-	accent-color: #705DF2;
-	margin-top: 20px;
-  }
-  
-  .price-info h4 {
-	font-family: 'Montserrat', sans-serif;
-	font-size: 2.6rem;
-	margin-bottom: 10px;
-	text-transform: uppercase;
-	color: white;
-  }
-  
-  .price-info p {
-	font-family: 'Avenir LT Std';
-	font-size: 1.8rem;
-	margin: 0 0 20px;
-	color: #B68EF8;
-  }
-  
