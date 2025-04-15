@@ -142,6 +142,24 @@
         <div class="container text-center">
         <h2 data-aos="fade-up" data-aos-duration="1000">Personaliza tu Experiencia</h2>
     </div>
+    
+
+    <!--========== prices slider start ===========-->
+    <section class="price_slider_area" id="precios_section">
+        <div class="container text-center" data-aos="fade-up" data-aos-duration="1000">
+          <h2 class="mb-4">Selecciona el tamaño de tu evento</h2>
+      
+          <input type="range" id="guestsRange" min="1" max="5" value="1" step="1" />
+      
+          <div class="price-info mt-4">
+            <h4 id="guestLabel">Hasta 100 invitados</h4>
+            <p id="priceLabel" class="mb-4">$800 MXN</p>
+            <a id="whatsappBtn" class="btn" target="_blank" href="https://wa.me/8119968390?text=Hola!%20Quiero%20reservar%20mi%20evento%20con%20MMNTO%20-%20Paquete:%20Hasta%20100%20invitados%20-%20Precio:%20$800">
+              Reservar este paquete por WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
 
 <!--========== logos area start ===========-->
 <section class="logos_area" id="evento_section">
@@ -439,5 +457,31 @@
     <script src="js/aos.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+
+
+    <script>
+        const guestLabel = document.getElementById("guestLabel");
+        const priceLabel = document.getElementById("priceLabel");
+        const range = document.getElementById("guestsRange");
+        const whatsappBtn = document.getElementById("whatsappBtn");
+      
+        const tiers = [
+          { label: "Hasta 100 invitados", price: "$800 MXN" },
+          { label: "Hasta 250 invitados", price: "$1,600 MXN" },
+          { label: "Hasta 400 invitados", price: "$2,900 MXN" },
+          { label: "Hasta 600 invitados", price: "$4,000 MXN" },
+          { label: "Más de 800 invitados", price: "$6,000 MXN" }
+        ];
+      
+        range.addEventListener("input", () => {
+          const value = parseInt(range.value) - 1;
+          const tier = tiers[value];
+          guestLabel.textContent = tier.label;
+          priceLabel.textContent = tier.price;
+          whatsappBtn.href = `https://wa.me/8119968390?text=Hola!%20Quiero%20reservar%20mi%20evento%20con%20MMNTO%20-%20Paquete:%20${encodeURIComponent(tier.label)}%20-%20Precio:%20${encodeURIComponent(tier.price)}`;
+        });
+      </script>
+      
+
 </body>
 </html>
