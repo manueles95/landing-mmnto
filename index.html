@@ -142,6 +142,38 @@
         <div class="container text-center">
         <h2 data-aos="fade-up" data-aos-duration="1000">Personaliza tu Experiencia</h2>
     </div>
+
+
+            <!--========== BOTON DE SLIDER 28 DE AB ===========-->
+
+    <section class="mmnto-slider-section" data-aos="fade-up">
+        <div class="container text-center">
+          <h2 class="mb-4">PERSONALIZA TU EXPERIENCIA</h2>
+      
+          <div class="slider-display">
+            <div class="slider-value">
+              <span id="sliderGuests">Hasta 100 invitados</span>
+            </div>
+            <div class="slider-button">
+              <a class="btn-slider" target="_blank" href="https://wa.me/8119968390?text=Hola%20%F0%9F%91%8B%20%C2%BFPueden%20ayudarme%20a%20agendar%20mi%20evento%20con%20MMNTO%3F">
+                Agenda tu evento
+              </a>
+            </div>
+          </div>
+      
+          <div class="slider-container">
+            <input type="range" id="guestsSlider" min="0" max="4" step="1" value="0">
+            <div class="slider-labels">
+              <span>100</span>
+              <span>250</span>
+              <span>400</span>
+              <span>600</span>
+              <span>800+</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      
    
       
 
@@ -442,6 +474,26 @@
     <script src="js/aos.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+
+
+    <script>
+        const guestsSlider = document.getElementById("guestsSlider");
+        const sliderGuests = document.getElementById("sliderGuests");
+      
+        const options = [
+          "Hasta 100 invitados",
+          "Hasta 250 invitados",
+          "Hasta 400 invitados",
+          "Hasta 600 invitados",
+          "Más de 800 invitados"
+        ];
+      
+        guestsSlider.addEventListener("input", () => {
+          const index = parseInt(guestsSlider.value);
+          sliderGuests.textContent = options[index];
+        });
+      </script>
+      
 
 </body>
 </html>
