@@ -497,11 +497,11 @@
         ];
       
         function updateSliderUI(index) {
-          // Actualizar texto
+          // Actualizar textos
           sliderGuests.textContent = options[index].guests;
           sliderPrice.textContent = options[index].price;
       
-          // Activar animaciones
+          // Activar animaciones suaves
           sliderGuests.parentElement.classList.remove('show');
           sliderPrice.parentElement.classList.remove('show');
           void sliderGuests.parentElement.offsetWidth;
@@ -509,34 +509,37 @@
           sliderGuests.parentElement.classList.add('show');
           sliderPrice.parentElement.classList.add('show');
       
-          // Mostrar u ocultar badge
+          // Mostrar u ocultar badge "Más popular"
           if (index === 2) {
             popularBadge.classList.add('show');
           } else {
             popularBadge.classList.remove('show');
           }
       
-          // Mensaje dinámico para WhatsApp
+          // Mensaje de WhatsApp personalizado
           const guestNumber = options[index].guests.split(" ")[1];
           const message = `Hola 👋 Estoy planeando un evento con hasta ${guestNumber} invitados y me quiero asegurar de que mis invitados me ayuden a capturar todas las memorias posibles. ¿Me pueden apoyar?`;
           const urlEncoded = encodeURIComponent(message);
           whatsappButton.href = `https://wa.me/8119968390?text=${urlEncoded}`;
       
-          // Actualizar barra progresiva
+          // Actualizar barra progresiva del slider
           const percent = index * 25;
-          guestsSlider.style.backgroundSize = `${percent}% 100%`;
+          guestsSlider.style.setProperty('--fill-width', `${percent}%`);
         }
       
-        // Inicializar correctamente al cargar
+        // Inicializar visualmente al cargar
         document.addEventListener('DOMContentLoaded', () => {
-          updateSliderUI(guestsSlider.value);
+          updateSliderUI(parseInt(guestsSlider.value));
         });
       
+        // Actualizar cuando el usuario mueva el slider
         guestsSlider.addEventListener("input", () => {
-          updateSliderUI(guestsSlider.value);
+          updateSliderUI(parseInt(guestsSlider.value));
         });
       </script>
       
+      
 
+      
 </body>
 </html>

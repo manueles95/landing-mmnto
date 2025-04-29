@@ -1024,7 +1024,7 @@ form .btn:hover{
 	margin-top: auto;
   }
 
-/* ========== MMNTO SLIDER REFINADO ========== */
+/* ========== MMNTO SLIDER COMPLETO CON BARRA DUAL ========== */
 
 .mmnto-slider-wrapper {
 	padding: 80px 0;
@@ -1108,6 +1108,7 @@ form .btn:hover{
 	border: 1px solid #B68EF8;
   }
   
+  /* SLIDER INPUT DUAL TRACK */
   .slider-container {
 	position: relative;
 	max-width: 500px;
@@ -1117,13 +1118,26 @@ form .btn:hover{
   .slider-container input[type="range"] {
 	width: 100%;
 	-webkit-appearance: none;
-	background: linear-gradient(90deg, #195BFE 0%, #B68EF8 100%);
+	appearance: none;
 	height: 8px;
+	background-color: rgba(255, 255, 255, 0.15);
 	border-radius: 10px;
 	outline: none;
-	background-size: 20% 100%;
-	background-repeat: no-repeat;
-	transition: background-size 0.3s ease;
+	position: relative;
+	overflow: hidden;
+  }
+  
+  .slider-container input[type="range"]::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: var(--fill-width, 20%);
+	background: linear-gradient(90deg, #195BFE 0%, #B68EF8 100%);
+	border-radius: 10px;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	pointer-events: none;
   }
   
   .slider-container input[type="range"]::-webkit-slider-thumb {
@@ -1136,6 +1150,8 @@ form .btn:hover{
 	box-shadow: 0 0 10px rgba(182, 142, 248, 0.6);
 	cursor: pointer;
 	margin-top: -10px;
+	position: relative;
+	z-index: 2;
   }
   
   .slider-labels {
@@ -1148,7 +1164,6 @@ form .btn:hover{
   }
   
   /* Animaciones */
-  
   .animated {
 	opacity: 0;
 	transform: translateY(10px);
