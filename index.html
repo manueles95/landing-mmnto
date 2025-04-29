@@ -143,6 +143,44 @@
         <h2 data-aos="fade-up" data-aos-duration="1000">Personaliza tu Experiencia</h2>
     </div>
 
+    <section class="mmnto-slider-wrapper" data-aos="fade-up">
+        <div class="container text-center">
+          <div class="slider-box">
+            <h2 class="mb-4">Un paquete a tu medida</h2>
+      
+            <div class="slider-display">
+              <div class="slider-value animated">
+                <span id="sliderGuests">Hasta 100 invitados</span>
+                <div id="popularBadge" class="popular-badge hidden">⭐ Más popular</div>
+              </div>
+              <div class="slider-price animated">
+                <span id="sliderPrice">$600 MXN</span>
+              </div>
+              <div class="slider-subtext">
+                Hasta 25 fotos por invitado
+              </div>
+              <div class="slider-button">
+                <a id="whatsappButton" class="btn-slider" target="_blank" href="https://wa.me/8119968390">
+                  Agenda tu evento
+                </a>
+              </div>
+            </div>
+      
+            <div class="slider-container">
+              <input type="range" id="guestsSlider" min="0" max="4" step="1" value="0">
+              <div class="slider-labels">
+                <span>100</span>
+                <span>250</span>
+                <span>400</span>
+                <span>600</span>
+                <span>800+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
       
 
 <!--========== logos area start ===========-->
@@ -443,7 +481,62 @@
     <script src="js/main.js"></script>
 
       
-
+    <script>
+        const guestsSlider = document.getElementById("guestsSlider");
+        const sliderGuests = document.getElementById("sliderGuests");
+        const sliderPrice = document.getElementById("sliderPrice");
+        const whatsappButton = document.getElementById("whatsappButton");
+        const popularBadge = document.getElementById("popularBadge");
+      
+        const options = [
+          { guests: "Hasta 100 invitados", price: "$600 MXN" },
+          { guests: "Hasta 250 invitados", price: "$1,100 MXN" },
+          { guests: "Hasta 400 invitados", price: "$1,900 MXN" },
+          { guests: "Hasta 600 invitados", price: "$2,200 MXN" },
+          { guests: "Más de 800 invitados", price: "$2,900 MXN" }
+        ];
+      
+        function updateSliderUI(index) {
+          // Actualizar texto
+          sliderGuests.textContent = options[index].guests;
+          sliderPrice.textContent = options[index].price;
+      
+          // Activar animaciones
+          sliderGuests.parentElement.classList.remove('show');
+          sliderPrice.parentElement.classList.remove('show');
+          void sliderGuests.parentElement.offsetWidth;
+          void sliderPrice.parentElement.offsetWidth;
+          sliderGuests.parentElement.classList.add('show');
+          sliderPrice.parentElement.classList.add('show');
+      
+          // Mostrar u ocultar badge
+          if (index === 2) {
+            popularBadge.classList.add('show');
+          } else {
+            popularBadge.classList.remove('show');
+          }
+      
+          // Mensaje dinámico para WhatsApp
+          const guestNumber = options[index].guests.split(" ")[1];
+          const message = `Hola 👋 Estoy planeando un evento con hasta ${guestNumber} invitados y me quiero asegurar de que mis invitados me ayuden a capturar todas las memorias posibles. ¿Me pueden apoyar?`;
+          const urlEncoded = encodeURIComponent(message);
+          whatsappButton.href = `https://wa.me/8119968390?text=${urlEncoded}`;
+      
+          // Actualizar barra progresiva
+          const percent = index * 25;
+          guestsSlider.style.backgroundSize = `${percent}% 100%`;
+        }
+      
+        // Inicializar correctamente al cargar
+        document.addEventListener('DOMContentLoaded', () => {
+          updateSliderUI(guestsSlider.value);
+        });
+      
+        guestsSlider.addEventListener("input", () => {
+          updateSliderUI(guestsSlider.value);
+        });
+      </script>
+      
 
 </body>
 </html>
