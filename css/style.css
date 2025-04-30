@@ -1184,4 +1184,37 @@ form .btn:hover{
 	  font-size: 2.0rem;
 	}
   }
+
+  /* === Fix 1: Mostrar correctamente el thumb === */
+
+.slider-container input[type="range"] {
+	position: relative;
+	z-index: 2;
+	overflow: visible !important; /* aseguramos que el thumb no se oculte */
+  }
+  
+  .slider-container input[type="range"]::-webkit-slider-thumb {
+	z-index: 3;
+	position: relative;
+  }
+  
+  /* === Fix 2: Badge 'Más popular' visible y fijo === */
+  
+  .popular-badge {
+	font-size: 1.2rem;
+	color: #FFD700;
+	position: absolute;
+	top: -22px;
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease, visibility 0.3s ease;
+	pointer-events: none;
+  }
+  
+  .popular-badge.show {
+	opacity: 1;
+	visibility: visible;
+  }
   
